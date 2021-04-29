@@ -1,11 +1,13 @@
-{ "manifest_version": 2, "name": "PageSaver?", 
+{ "manifest_version": 2, 
+    "name": "PageSaver?", 
     "description": "We will be creating a chrome extension that can save URL links, and highlight parts of a webpage and save it.", 
-    "version": "1", "authors": "Max Bromet and Eileen Lee", 
+    "version": "1", 
+    "authors": "Max Bromet and Eileen Lee", 
     "browser_action": {  
+        "default_icon": "icon.png", 
         "default_popup": "popup.html",
-        "default_icon": "icon.jpg", 
         "default_title": "Page Saver" 
-    }
-
+    },
+    "permissions": ["activeTab"]
    
 }
