@@ -1,13 +1,20 @@
 { "manifest_version": 2, 
-    "name": "PageSaver?", 
+    "name": "hi", 
     "description": "We will be creating a chrome extension that can save URL links, and highlight parts of a webpage and save it.", 
     "version": "1", 
     "authors": "Max Bromet and Eileen Lee", 
     "browser_action": {  
-        "default_icon": "icon.png", 
+        "default_icon": "snek.png", 
         "default_popup": "popup.html",
         "default_title": "Page Saver" 
     },
-    "permissions": ["activeTab"]
-   
+    "permissions": ["tabs", "activeTab","http://*/*"],
+    
+    "content_scripts" : [{"matches" : ["<all_urls>"],
+    "js": ["content.js"]}],
+
+    
+    "background" : {
+        "scripts" : ["background.js"]
+    }
 }
