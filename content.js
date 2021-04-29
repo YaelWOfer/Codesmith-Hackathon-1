@@ -1,7 +1,6 @@
 // console.log("Content Script is Running");
 
 let imgs = document.getElementsByTagName('img');
-
 let url = chrome.extension.getURL("images/doge.png");
 
 chrome.runtime.onMessage.addListener(

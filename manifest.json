@@ -12,7 +12,7 @@
     "web_accessible_resources" : [
         "images/doge.png"
     ],
-    "permissions": ["tabs", "activeTab", "declarativeContent", "storage", "https://some-random-api.ml/*"],
+    "permissions": ["tabs", "activeTab", "declarativeContent", "storage"],
     
     "background" : {
         "scripts" : ["background.js"],
