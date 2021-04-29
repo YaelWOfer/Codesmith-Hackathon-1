@@ -1,21 +1,16 @@
-console.log("Background running");
-chrome.browserAction.onClicked.addListener(IconClicked);
-function IconClicked(tab)
-{
-	let msg = {
-		txt : "Hello"
-	}
-	chrome.tabs.sendMessage(tab.id,msg);
-}
-// function injectedFunction() {
-//     document.body.style.backgroundColor = 'orange';
-//   }
-  
-//   chrome.runtime.onMessage.addListener((message, callback) => {
-//     if (message == "changeColor"){
-//       chrome.scripting.executeScript({
-//         function: injectedFunction,
-//         arguments: ['orange']
-//       });
-//     }
-// });
+console.log("Background Script is Running");
+chrome.runtime.onInstalled.addListener(function () {
+  chrome.declarativeContent.onPageChanged.removeRules(undefined, function () {
+    chrome.declarativeContent.onPageChanged.addRules([
+      {
+        conditions: [
+          new chrome.declarativeContent.PageStateMatcher({
+            pageUrl: { hostEquals: window.location.href},
+          }),
+        ],
+        actions: [new chrome.declarativeContent.ShowPageAction()],
+      },
+    ]);
+  });
+});
+

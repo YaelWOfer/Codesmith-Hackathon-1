@@ -1,10 +1,25 @@
-chrome.runtime.onMessage.addListener(gotMessage);
-function gotMessage(message,sender,sendresponse)
-{
-	console.log(message.txt);
-	let paragraphs = document.getElementsByTagName("p");
-	for(elt of paragraphs)
-	{
-		elt.style['background-color'] = '#00CED1';
-	}
-}
+// console.log("Content Script is Running");
+
+let imgs = document.getElementsByTagName('img');
+
+let url = chrome.extension.getURL("images/doge.png");
+
+chrome.runtime.onMessage.addListener(
+    function(request, sender, sendResponse) {
+        for (imgElt of imgs) {
+            let file = 'images/doge.png';
+            let url = chrome.extension.getURL(file);
+            imgElt.src = url;
+        }
+        if (request.greeting == "hello")
+            sendResponse({farewell: function (){
+                for (imgElt of imgs) {
+                    let file = 'images/doge.png';
+                    let url = chrome.extension.getURL(file);
+                    imgElt.src = url;
+                }
+            }});
+});
+
+
+
