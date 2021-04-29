@@ -1,6 +1,6 @@
 { "manifest_version": 2, 
     "name": "Bruh", 
-    "description": "We will be creating a chrome extension that can save URL links, and highlight parts of a webpage and save it.", 
+    "description": "We will be creating a pop up with buttons. The buttons have different functionalities.", 
     "version": "1", 
     "authors": "Max Bromet and Eileen Lee", 
     "browser_action": {  
